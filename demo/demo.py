@@ -174,3 +174,12 @@ if __name__ == '__main__':
     tasks[0].complete()
 
     print wf.get_tasks(Task.READY)
+    print '.' * 80
+    print 'Completed tasks:'
+    for task in wf.get_tasks(Task.COMPLETED):
+        print ' -', task
+
+    print ''
+    print 'Next tasks:'
+    for task in wf.get_tasks(Task.READY):
+        print ' -', task
