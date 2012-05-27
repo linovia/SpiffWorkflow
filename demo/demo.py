@@ -144,16 +144,33 @@ def create_specs():
 
 if __name__ == '__main__':
     ref = create_specs()
+    print '-' * 80
     print ref
 
     wf = Workflow(ref)
     print wf
+    print '-' * 80
 
     tasks = wf.get_tasks(Task.READY)
+    print tasks
+    print 'Marking %s as completed' % tasks[0].task_spec.name
     tasks[0].complete()
 
     tasks = wf.get_tasks(Task.READY)
+    print tasks
+    print 'Marking %s as completed' % tasks[0].task_spec.name
     tasks[0].complete()
+
+    tasks = wf.get_tasks(Task.READY)
+    print tasks
+    print 'Marking %s as completed' % tasks[0].task_spec.name
+    tasks[0].complete()
+    print 'Marking %s as completed' % tasks[1].task_spec.name
     tasks[1].complete()
+
+    tasks = wf.get_tasks(Task.READY)
+    print tasks
+    print 'Marking %s as completed' % tasks[0].task_spec.name
+    tasks[0].complete()
 
     print wf.get_tasks(Task.READY)
